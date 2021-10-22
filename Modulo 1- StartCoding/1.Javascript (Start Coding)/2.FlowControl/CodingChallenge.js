@@ -22,13 +22,13 @@ if(signIn){
     user = prompt("Ingrese su nombre de usuario");
     while (user.length<3) {
         alert("Su usuario debe tener por lo menos 3 carácteres");
-        user=prompt("Ingrese nuevamente su nombre de ususario");
+        user= prompt("Ingrese su nombre de usuario");
     }
     user = user.toLowerCase();
     pass= prompt("Ingrese su contraseña");
     if(pass.length<6){
         alert("Su contraseña debe tener por lo menos 6 caracteres");
-        pass= prompt("Ingrese nuevamente su nombre de contraeña");
+        pass= prompt("Ingrese su contraseña");
     }
     else{
         alert("Su registro fue exitoso");
@@ -69,10 +69,13 @@ if(signIn){
     }
     else if(userLog!==user){
         alert("Ingreso mal su usuario");
+        userLog=prompt("Ingrese su usuario");
 
     }
 else if(passLog!==pass){
-    alert("Ingreso mal su contraseña");}
+    alert("Ingreso mal su contraseña");
+    passLog= prompt("Ingrese su contraseña");
+}
 }
 
 
