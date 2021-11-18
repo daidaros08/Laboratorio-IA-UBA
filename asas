@@ -1,0 +1,130 @@
+[1mdiff --git a/Modulo 1- StartCoding/1.Javascript (Start Coding)/5.Objects/objectsExcersises.js b/Modulo 1- StartCoding/1.Javascript (Start Coding)/5.Objects/objectsExcersises.js[m
+[1mdeleted file mode 100644[m
+[1mindex e34fd87..0000000[m
+[1m--- a/Modulo 1- StartCoding/1.Javascript (Start Coding)/5.Objects/objectsExcersises.js[m	
+[1m+++ /dev/null[m
+[36m@@ -1,124 +0,0 @@[m
+[31m-//      EJERCICIOS[m
+[31m-/*[m
+[31m-1) Crear una clase Deportes, que reciba el atributo nombre[m
+[31m-y un metodo que permita mostrar por consola ese nombre.[m
+[31m-Ademas, crear un metodo que permita mostrar si el deporte es[m
+[31m-individual o por equipos.[m
+[31m-Crear una subclase que sea DeportesDeEquipo que permita ademas del nombre, [m
+[31m-el numero de integrantes que deben formar parte de ese equipo. [m
+[31m-Crear un metodo para[m
+[31m-mostrar el siguiente mensaje: [m
+[31m-"Para jugar al futbol necesitas 11 jugadores por equipo".[m
+[31m- Tener en cuenta que 'futbol' y 11 son valores que [m
+[31m- pueden variar dependiedo[m
+[31m- del deporte (por ejemplo, si fuese basket, seria 5 jugadores)[m
+[31m- Futbol[m
+[31m- Basket[m
+[31m- Tenis[m
+[31m-PARA ESTA ACTIVIDAD, USAR LO VISTO RESPECTO DE CLASES Y OBJETOS[m
+[31m-*/[m
+[31m-[m
+[31m-class Sports{[m
+[31m-    constructor (name,isTeamPlay){[m
+[31m-        this.name=name;[m
+[31m-        this.isTeamSport=isTeamPlay;[m
+[31m-    }[m
+[31m-    sportName(){[m
+[31m-        console.log(this.name);[m
+[31m-    }[m
+[31m-    isTeamPlay(){[m
+[31m-        let message;[m
+[31m-        if(this.isTeamSport){[m
+[31m-            message=`${this.name} es un deporte de equipo`;[m
+[31m-        } else {[m
+[31m-            message=`${this.name} no es un deporte de equipo`;[m
+[31m-        }[m
+[31m-        console.log(message);[m
+[31m-        }[m
+[31m-        [m
+[31m-}[m
+[31m-[m
+[31m-class TeamSport extends Sports{[m
+[31m-    constructor (name,isTeamPlay,players){[m
+[31m-        super(name,isTeamPlay);[m
+[31m-        this.players=players;[m
+[31m-    }[m
+[31m-    sizeOfTeam(){[m
+[31m-        console.log(`Para jugar al ${this.name} necesitas ${this.players} jugadores por equipo`);[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[31m-let futbol = new TeamSport("Futbol", true, 11);[m
+[31m-let tenis = new Sports("Tennis",false);[m
+[31m-let basquet = new TeamSport("Basquet", true, 5);[m
+[31m-[m
+[31m-console.log(futbol.isTeamPlay());[m
+[31m-console.log(futbol.sizeOfTeam());[m
+[31m-console.log(tenis.isTeamPlay());[m
+[31m-console.log(basquet.isTeamPlay());[m
+[31m-console.log(basquet.sizeOfTeam());[m
+[31m-[m
+[31m-[m
+[31m-/*2) Andrea y Martin deciden hacer un picnic al aire libre.[m
+[31m-Andrea propone llevar una bolsa con 2 cervezas, 2 sandwiches y 1 bolsa[m
+[31m-de papas fritas. Por su parte, Martin lleva 1 porcion de torta, una gaseosa[m
+[31m-y 1 paquete de galletitas dulces.[m
+[31m-CREAR UN OBJETO QUE REPRESENTE CADA UNA DE LAS BOLSAS,[m
+[31m-DONDE CADA PRODUCTO TENGA LA CANTIDAD QUE LLEVO CADA UNO.[m
+[31m-REALIZAR LAS SIGUIENTES TAREAS:[m
+[31m-a) Mostrar por consola los productos que llevo cada uno[m
+[31m-(solo el nombre del producto)[m
+[31m-b) En el camino al picnic, la bolsa de Andrea se rompio, [m
+[31m-por lo que tuvieron que poner todo en la bolsa de Martin.[m
+[31m-Realizar el cambio correspondiente para que la bolsa de Martin[m
+[31m-tenga el total de los productos del picnic.[m
+[31m-c) Calcular el total de productos que llevaron al picnic[m
+[31m-*/[m
+[31m-[m
+[31m-class Bag{[m
+[31m-    constructor(){[m
+[31m-[m
+[31m-    }[m
+[31m-}[m
+[31m-class AndreaBag extends Bag {[m
+[31m-    constructor (cantCerv,cantSand,cantPapas){[m
+[31m-        super();[m
+[31m-        this.cervezas=cantCerv;[m
+[31m-        this.sandwiches=cantSand;[m
+[31m-        this.papasFritas=cantPapas;[m
+[31m-    }[m
+[31m-}[m
+[31m-class MartinBag extends Bag {[m
+[31m-    constructor (cantTorta,cantGaseosa,cantGallet){[m
+[31m-        super();[m
+[31m-        this.tortas =cantTorta;[m
+[31m-        this.gaseosas = cantGaseosa;[m
+[31m-        this.galletitas = cantGallet;[m
+[31m-    }[m
+[31m-}[m
+[31m-let andreaBag = new AndreaBag(2,2,1);[m
+[31m-let martinBag = new MartinBag(1,1,1);[m
+[31m-[m
+[31m-console.log("Bolsa de Andrea: ");[m
+[31m-for (let i=0;i<Object.keys(andreaBag).length;i++){[m
+[31m-    console.log(Object.keys(andreaBag)[i]);[m
+[31m-    [m
+[31m-}[m
+[31m-console.log("-------------");[m
+[31m-console.log("Bolsa de Martin: ");[m
+[31m-for (let i=0;i<Object.keys(martinBag).length;i++){[m
+[31m-    console.log(Object.keys(martinBag)[i]);[m
+[31m-    [m
+[31m-}[m
+[31m-Object.assign(martinBag,andreaBag);[m
+[31m-console.log(martinBag);[m
+[31m-[m
+[31m-let numberOfProducts=0;[m
+[31m-for(let i=0; i<Object.keys(martinBag).length;i++){[m
+[31m-    numberOfProducts+=Object.values(martinBag)[i];[m
+[31m-[m
+[31m-}[m
+[31m-console.log(`La cantidad de cosas que llevaron para comer es: ${numberOfProducts}`  );[m
+[31m-[m
+[31m-[m
+[31m-[m
